@@ -1,72 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- This document is intended only for use by authorized licensees of The  -->
-<!-- Weather Channel. Unauthorized use is prohibited.  Copyright 1995-2011, -->
-<!-- The Weather Channel Interactive, Inc.  All Rights Reserved.            -->
-<weather ver="2.0">
-  <head>
-    <locale>en_US</locale>
-    <form>MEDIUM</form>
-    <ut>F</ut>
-    <ud>mi</ud>
-    <us>mph</us>
-    <up>in</up>
-    <ur>in</ur>
-  </head>
-  <loc id="20904">
-    <dnam>Silver Spring, MD (20904)</dnam>
-    <tm>6:37 PM</tm>
-    <lat>39.07</lat>
-    <lon>-76.98</lon>
-    <sunr>6:03 AM</sunr>
-    <suns>8:25 PM</suns>
-    <zone>-4</zone>
-  </loc>
-  <lnks type="prmo">
-    <link pos="1">
-      <l>http://www.weather.com/allergies?par=xoap&amp;site=textlink&amp;cm_ven=XOAP&amp;cm_cat=TextLink&amp;cm_pla=Link1&amp;cm_ite=Allergies</l>
-      <t>Local Pollen Reports</t>
-    </link>
-    <link pos="2">
-      <l>http://www.weather.com/flights?par=xoap&amp;site=textlink&amp;cm_ven=XOAP&amp;cm_cat=TextLink&amp;cm_pla=Link2&amp;cm_ite=BusinessTraveler</l>
-      <t>Airport Conditions</t>
-    </link>
-    <link pos="3">
-      <l>http://www.weather.com/garden?par=xoap&amp;site=textlink&amp;cm_ven=XOAP&amp;cm_cat=TextLink&amp;cm_pla=Link3&amp;cm_ite=Garden</l>
-      <t>Lawn and Garden Weather</t>
-    </link>
-    <link pos="4">
-      <l>http://www.weather.com/traffic?par=xoap&amp;site=textlink&amp;cm_ven=XOAP&amp;cm_cat=TextLink&amp;cm_pla=Link4&amp;cm_ite=Traffic</l>
-      <t>Rush Hour Traffic</t>
-    </link>
-  </lnks>
-  <cc>
-    <lsup>7/26/11 6:25 PM EDT</lsup>
-    <obst>College Park, MD</obst>
-    <tmp>95</tmp>
-    <flik>93</flik>
-    <t>Fair</t>
-    <icon>34</icon>
-    <bar>
-      <r>29.71</r>
-      <d>steady</d>
-    </bar>
-    <wind>
-      <s>7</s>
-      <gust>16</gust>
-      <d>190</d>
-      <t>S</t>
-    </wind>
-    <hmid>23</hmid>
-    <vis>10.0</vis>
-    <uv>
-      <i>1</i>
-      <t>Low</t>
-    </uv>
-    <dewp>52</dewp>
-    <moon>
-      <icon>25</icon>
-      <t>Waning Crescent</t>
-    </moon>
-  </cc>
-</weather>
-
+<?xml version="1.0"?>
+<xml_api_reply version="1">
+    <weather module_id="0" tab_id="0" mobile_row="0" mobile_zipped="1" row="0" section="0">
+        <forecast_information>
+            <city data="Silver Spring, MD"/>
+            <postal_code data="Silver Spring"/>
+            <latitude_e6 data=""/>
+            <longitude_e6 data=""/>
+            <forecast_date data="2012-03-25"/>
+            <current_date_time data="2012-03-25 19:00:00 +0000"/>
+            <unit_system data="US"/>
+        </forecast_information>
+        <current_conditions>
+            <condition data="Overcast"/>
+            <temp_f data="58"/>
+            <temp_c data="14"/>
+            <humidity data="Humidity: 76%"/>
+            <icon data="/ig/images/weather/cloudy.gif"/>
+            <wind_condition data="Wind: N at 0 mph"/>
+        </current_conditions>
+        <forecast_conditions>
+            <day_of_week data="Sun"/>
+            <low data="50"/>
+            <high data="68"/>
+            <icon data="/ig/images/weather/chance_of_storm.gif"/>
+            <condition data="Chance of Storm"/>
+        </forecast_conditions>
+        <forecast_conditions>
+            <day_of_week data="Mon"/>
+            <low data="30"/>
+            <high data="63"/>
+            <icon data="/ig/images/weather/mostly_sunny.gif"/>
+            <condition data="Mostly Sunny"/>
+        </forecast_conditions>
+        <forecast_conditions>
+            <day_of_week data="Tue"/>
+            <low data="37"/>
+            <high data="55"/>
+            <icon data="/ig/images/weather/sunny.gif"/>
+            <condition data="Clear"/>
+        </forecast_conditions>
+        <forecast_conditions>
+            <day_of_week data="Wed"/>
+            <low data="48"/>
+            <high data="70"/>
+            <icon data="/ig/images/weather/mostly_sunny.gif"/>
+            <condition data="Mostly Sunny"/>
+        </forecast_conditions>
+    </weather>
+</xml_api_reply>

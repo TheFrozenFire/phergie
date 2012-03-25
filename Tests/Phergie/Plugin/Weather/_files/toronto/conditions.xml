@@ -2,49 +2,49 @@
 <xml_api_reply version="1">
     <weather module_id="0" tab_id="0" mobile_row="0" mobile_zipped="1" row="0" section="0">
         <forecast_information>
-            <city data="Atlanta, GA"/>
-            <postal_code data="Atlanta"/>
+            <city data="Toronto, ON"/>
+            <postal_code data="M3C 0C1"/>
             <latitude_e6 data=""/>
             <longitude_e6 data=""/>
             <forecast_date data="2012-03-25"/>
-            <current_date_time data="2012-03-25 18:53:00 +0000"/>
+            <current_date_time data="2012-03-25 19:00:00 +0000"/>
             <unit_system data="US"/>
         </forecast_information>
         <current_conditions>
-            <condition data="Partly Cloudy"/>
-            <temp_f data="71"/>
-            <temp_c data="22"/>
-            <humidity data="Humidity: 39%"/>
-            <icon data="/ig/images/weather/partly_cloudy.gif"/>
-            <wind_condition data="Wind: NW at 12 mph"/>
+            <condition data="Cloudy"/>
+            <temp_f data="55"/>
+            <temp_c data="13"/>
+            <humidity data="Humidity: 67%"/>
+            <icon data="/ig/images/weather/cloudy.gif"/>
+            <wind_condition data="Wind: SW at 6 mph"/>
         </current_conditions>
         <forecast_conditions>
             <day_of_week data="Sun"/>
-            <low data="54"/>
-            <high data="75"/>
-            <icon data="/ig/images/weather/mostly_sunny.gif"/>
-            <condition data="Mostly Sunny"/>
+            <low data="32"/>
+            <high data="66"/>
+            <icon data="/ig/images/weather/fog.gif"/>
+            <condition data="Fog"/>
         </forecast_conditions>
         <forecast_conditions>
             <day_of_week data="Mon"/>
-            <low data="55"/>
-            <high data="81"/>
+            <low data="28"/>
+            <high data="45"/>
             <icon data="/ig/images/weather/sunny.gif"/>
             <condition data="Clear"/>
         </forecast_conditions>
         <forecast_conditions>
             <day_of_week data="Tue"/>
-            <low data="61"/>
-            <high data="82"/>
+            <low data="37"/>
+            <high data="45"/>
             <icon data="/ig/images/weather/mostly_sunny.gif"/>
-            <condition data="Mostly Sunny"/>
+            <condition data="Partly Sunny"/>
         </forecast_conditions>
         <forecast_conditions>
             <day_of_week data="Wed"/>
-            <low data="61"/>
-            <high data="84"/>
-            <icon data="/ig/images/weather/chance_of_storm.gif"/>
-            <condition data="Chance of Storm"/>
+            <low data="41"/>
+            <high data="63"/>
+            <icon data="/ig/images/weather/mostly_sunny.gif"/>
+            <condition data="Mostly Sunny"/>
         </forecast_conditions>
     </weather>
 </xml_api_reply>

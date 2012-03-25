@@ -2,7 +2,7 @@
 
 return array(
     'weatherReport' =>
-        'nick: Weather for Atlanta, GA - Current conditions: Partly Cloudy - Temperature: 22*C (71*F) - Humidity: 39%',
+        'nick: Weather for Toronto, ON - Current conditions: Mostly Cloudy - Temperature: 11*C (52*F) - Humidity: 76%',
     'response' => array(
         array(
             'isError' => false,

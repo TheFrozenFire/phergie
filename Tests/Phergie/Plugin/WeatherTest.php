@@ -38,75 +38,28 @@ class Phergie_Plugin_WeatherTest extends Phergie_Plugin_TestCase
     private $_data;
 
     /**
-     * Result of temperature conversion returned from Temperature
-     * mock object
-     *
-     * @var int
-     */
-    private $_temperature;
-
-    /**
      * Mock a HTTP Plugin and prime it with response data
      *
      * @return void
      */
     public function setUpWeatherResponse($dataSet)
     {
-        $this->setConfig('weather.partner_id', '1111');
-        $this->setConfig('weather.license_key', '1111');
-
         $dir = dirname(__FILE__) . '/Weather/_files/' . $dataSet;
-
+        
         $config = require $dir . '/config.php';
-
-        $response1 = $this->getHttpMock
-        (
-            $dir . '/location1.xml',
-            $config['response'][0]['isError']
-        );
-
-        $response2 = $this->getHttpMock
+        
+        $conditionResponse = $this->getHttpMock
         (
             $dir . '/conditions.xml',
-            $config['response'][1]['isError']
+            $config['response'][0]['isError']
         );
-
-        $response3 = $this->getHttpMock
-        (
-            $dir . '/location2.xml',
-            $config['response'][2]['isError']
-        );
-
+        
         $this->_data = $this->requirePlugin('Http');
-
+        
         $this->_data->expects($this->any())
             ->method('get')
-            ->will($this->onConsecutiveCalls($response1, $response2, $response3));
-
-        switch ($config['unit']) {
-        case 'f':
-        case 'fahrenheit':
-            $method = 'convertFahrenheitToCelsius';
-            break;
-
-        case 'c':
-        case 'celsius':
-            $method = 'convertCelsiusToFahrenheit';
-            break;
-
-        default:
-            $this->fail(
-                'Error with dataset ' . $dataSet . ': $config[\'unit\'] '
-                . 'was ' . $config['unit'] . ', but expected the values '
-                . '"f", "fahrenheit", "c" or "celsius"'
-            );
-        }
-
-        $this->_temperature = $this->requirePlugin('Temperature');
-        $this->_temperature->expects($this->any())
-            ->method($method)
-            ->will($this->returnValue($config['temperature']));
-
+            ->will($this->onConsecutiveCalls($conditionsResponse));
+            
         return $config;
     }
 
@@ -138,30 +91,8 @@ class Phergie_Plugin_WeatherTest extends Phergie_Plugin_TestCase
      */
     public function testRequiresCommandPlugin()
     {
-        $this->setConfig('weather.partner_id', '1111');
-        $this->setConfig('weather.license_key', '1111');
-
-        $this->assertRequiresPlugin(array('Command', 'Http', 'Temperature'));
+        $this->assertRequiresPlugin(array('Command', 'Http'));
         $this->plugin->onLoad();
-    }
-
-    /**
-     *  Tests plugin fails if no weather partner id or license key provided
-     *
-     *  @return void
-     */
-    public function testNoConfig()
-    {
-        try {
-            $this->plugin->onLoad();
-            $this->fail('Exception should have been thrown');
-        } catch( Exception $e) {
-            $this->assertInstanceOf('Phergie_Plugin_Exception', $e);
-            $this->assertEquals(
-                'weather.partner_id and weather.license_key must be specified',
-                $e->getMessage()
-            );
-        }
     }
 
     /**
@@ -206,6 +137,7 @@ class Phergie_Plugin_WeatherTest extends Phergie_Plugin_TestCase
         return array(
             array('atlanta',      'atlanta'),
             array('silverSpring', '20904'),
+            array('toronto',      'M3C 0C1'),
         );
     }
 }
